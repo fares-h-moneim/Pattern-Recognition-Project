@@ -84,4 +84,11 @@ def silence_removal(input_audio, sample_rate = 16000):
 def write_audio(input_audio, output_path, sample_rate = 16000):
     write(output_path, sample_rate, (input_audio * 32767).astype(np.int16))
 
+
+if __name__ == "__main__":
+    input_path = ""
+    output_path = ""
     
+    input_audio, sample_rate = load_audio(input_path)
+
+    audio_without_noise = noise_reduction(input_audio, sample_rate)
